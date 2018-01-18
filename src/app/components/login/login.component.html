@@ -1,0 +1,13 @@
+<form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Id"  formControlName="id" required>
+      <mat-error *ngIf="loginForm.controls['id'].invalid"></mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Password" formControlName="password" required>
+      <mat-error *ngIf="loginForm.controls['password'].invalid"></mat-error>
+    </mat-form-field>
+
+    <button type="submit"  mat-button>Login</button>
+  </form>
