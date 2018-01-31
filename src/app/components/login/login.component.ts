@@ -24,8 +24,7 @@ onSubmit()
   {   
     this.statusMessage="Checking ...";
      this.authService.login(this.loginForm.value.id,this.loginForm.value.password)
-    .subscribe(result=>{
-      debugger;
+    .subscribe(result=>{     
       if(result===true){this.router.navigate(['/admin'])}          
     },error=>{
       this.statusMessage="something went wrong";

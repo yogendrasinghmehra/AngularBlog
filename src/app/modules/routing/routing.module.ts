@@ -4,6 +4,7 @@ import{LoginComponent} from '../../components/login/login.component';
 import{NavMenuComponent} from '../../components/nav-menu/nav-menu.component';
 import{HomeComponent} from '../../components/home/home.component';
 import{AdminDashboardComponent} from '../../components/admin-dashboard/admin-dashboard.component';
+import{CreateTagComponent} from '../../components/Tags/create-tag/create-tag.component';
 import{RouterModule,Routes} from '@angular/router';
 import{AppComponent} from '../../app.component';
 import { Route } from '@angular/router/src/config';
@@ -21,6 +22,11 @@ const appRoutes:Routes=[
 {
   path:"admin",
   component:AdminDashboardComponent,
+  canActivate:[Guard]
+},
+{
+  path:"create-tag",
+  component:CreateTagComponent,
   canActivate:[Guard]
 }
 ]

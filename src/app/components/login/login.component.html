@@ -16,8 +16,7 @@
     <input type="password"  class="form-control" placeholder="Password" formControlName="password">
     <div  *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.dirty">password required</div>
     <div>{{statusMessage}}</div> 
-  </div>
-      
+  </div>      
     <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">Sign in</button>
     <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
   </form>
