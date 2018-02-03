@@ -15,6 +15,7 @@ import{Guard} from './models/guard';
 import { AuthenticationService } from './services/auth/authentication.service';
 import { CreateTagComponent } from './components/Tags/create-tag/create-tag.component';
 import { TagsService } from './services/Tag/tags.service';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 
 
@@ -25,7 +26,8 @@ import { TagsService } from './services/Tag/tags.service';
     LoginComponent,
     HomeComponent,
     AdminDashboardComponent,
-    CreateTagComponent          
+    CreateTagComponent,
+    BlogsComponent          
   ],
   imports: [
     BrowserModule, NgbModule.forRoot(),FroalaEditorModule.forRoot(),FroalaViewModule.forRoot(), RoutingModule,
