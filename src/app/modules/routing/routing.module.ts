@@ -18,7 +18,8 @@ const appRoutes:Routes=[
 },
 {
   path:"",
-  component:HomeComponent
+  component:HomeComponent,
+  pathMatch:"full"
 },
 {
   path:"admin",

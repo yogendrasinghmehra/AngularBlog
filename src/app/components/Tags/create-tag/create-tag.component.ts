@@ -68,6 +68,7 @@ export class CreateTagComponent implements OnInit {
 }
   ngOnInit() {
    this.getTagsList();
+   setTimeout(function(){this.statusMessage=""},3000);
   }
 
   
