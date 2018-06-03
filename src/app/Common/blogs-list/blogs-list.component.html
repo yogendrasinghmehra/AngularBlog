@@ -1,0 +1,48 @@
+<nav-menu></nav-menu>
+
+<ngx-spinner></ngx-spinner>
+
+<div class="container">
+  <div class="row py-4 mt-5">
+    <div class="col-9">      
+<section class=""> 
+<div *ngFor="let blog of list">
+  <div class="row card card-cascade wider reverse pt-3 pb-3 pr-3 mb-3" >      
+      <div class="col-lg-12 col-xl-12 ml-xl-4">
+          <h4 class="mb-3 font-weight-bold">
+              <strong>{{blog.title}}</strong>
+          </h4>
+          <div class="" [innerHTML]="blog.content.substring(0,200)">
+              
+          </div>
+          <p>by <span class="font-weight-bold dark-grey-text">yogendra</span>, {{blog.createdDate | date:'MMMM dd, yyyy'}}</p>
+          <a   [routerLink]="['/blog',blog.urlslug]" class="btn btn-outline-black btn-rounded btn-md waves-effect waves-light" mdbWavesEffect>view full post </a>
+      </div>  
+     
+  </div>
+  
+</div> 
+<div class="row">
+    <div class="col-6 text-right">
+      <div *ngIf="prevoiusPage>0">
+            <a (click)="getBlogLists(prevoiusPage)" class="btn btn-outline-black btn-rounded btn-md waves-effect waves-light" mdbWavesEffect> <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous </a>   
+      </div>
+       
+    </div>
+    <div class="col-6">
+            <div *ngIf="nextPage>1">
+         <a (click)="getBlogLists(nextPage)" class="btn btn-outline-black btn-rounded btn-md waves-effect waves-light" mdbWavesEffect>Next <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>   
+            </div>
+      
+    </div>
+    
+</div>  
+
+
+</section>          
+    </div>
+    <div class="col-3">
+        <tags-list></tags-list>
+    </div>
+  </div>
+</div>

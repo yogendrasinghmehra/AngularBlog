@@ -1,0 +1,27 @@
+<admin-dashboard></admin-dashboard> 
+
+<div class="container" id="Main-Wrapper">
+  
+  <div class="row">
+      <div class=" col-md-12 blog-main">
+          <div class="card ">              
+              <div class="card-body">
+                  <h2 class="card-title text-center">Blogs List</h2>
+
+                  <div class="blog-post"  *ngFor="let blog of BlogList.list">
+                      <h4 class="blog-post-title">{{blog.title}}</h4>
+                      <p class="blog-post-meta">{{blog.createdDate | date:'MMMM dd, yyyy'}}
+                         <button    [routerLink]="['/admin/edit-blog', blog.id]" class="btn btn-outline-black btn-rounded" mdbWavesEffect>Edit</button >
+                        </p>
+                      <!-- <div [innerHTML]="blog.content"></div> -->
+                      <hr>
+                  </div>                             
+              </div>
+          </div>
+
+        </div>     
+  </div>
+  
+ 
+ 
+</div>

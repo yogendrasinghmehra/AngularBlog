@@ -1,0 +1,4 @@
+<div id="tag-wrapper" >
+  <a *ngFor="let tag of TagList" [routerLink]="['/blogs/tag',tag.name]"><span class="badge badge-pill black">{{tag.name}}</span></a>    
+</div>
+  

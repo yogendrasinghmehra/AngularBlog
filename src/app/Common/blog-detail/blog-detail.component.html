@@ -1,0 +1,32 @@
+<nav-menu></nav-menu>
+<!--Card image-->
+<div class="view overlay hm-white-slight waves-light" mdbWavesEffect style="width:100%">
+    <img src="../../../assets/images/1_CFM9_VhPRrGG755enCmClw (1).jpeg" style="width: 100%;" class="img-fluid">        
+</div>
+<!--/Card image-->
+
+<div class="container">
+  <section class="section pb-3" style="margin-top: -100px;">
+     
+<!--Card-->
+<div class="card card-cascade wider reverse my-4">
+    <!--Card content-->
+    <div class="card-body text-center">
+        <!--Title-->
+        <h4 class="card-title"><strong>{{details.title}}</strong></h4>
+        <h5 class="indigo-text"><strong>{{details.modifiedDate | date:'MMMM dd, yyyy'}}</strong></h5>
+        <p class="card-text text-justify" [innerHTML]="details.content"></p>   
+        <disqus [identifier]="pageId"></disqus>              
+    </div>
+   
+                           
+    <!--/.Card content-->
+
+</div>
+<!--/.Card-->
+            
+  </section>
+ 
+</div>
+
+
