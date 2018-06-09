@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/ng2-slim-loading-bar/style.css";
+
 
 body{ background-color: #d9d9d9 !important}
 .card{border-radius: 0%;}
