@@ -1,20 +1,29 @@
-import { NgModule,NO_ERRORS_SCHEMA } from "@angular/core";
-import{CommonModule } from '@angular/common';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { EditBlogComponent } from './edit-blog/edit-blog.component';
-import { AddBlogComponent } from './add-blog/add-blog.component';
-import { CreateTagComponent } from './create-tag/create-tag.component';
-import { BlogsComponent } from './blogs/blogs.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import{MDBBootstrapModule} from 'angular-bootstrap-md';
+import{ReactiveFormsModule} from '@angular/forms';
+import{AdminDashboardComponent} from '../Admin/admin-dashboard/admin-dashboard.component';
+import{CreateTagComponent} from '../Admin/create-tag/create-tag.component';
+import{BlogsComponent} from '../Admin/blogs/blogs.component';
+import{EditBlogComponent} from '../Admin/edit-blog/edit-blog.component';
+import{AddBlogComponent} from '../Admin/add-blog/add-blog.component';
+import { AdminRoutingModule } from './admin-routing.module';
 import { TagsService } from '../core/services/tags.service';
 import { BlogService } from '../core/services/blog.service';
-import { AdminRoutingModule } from '../Admin/admin.routing';
+import{Guard} from '../core/models/guard';
+import { AuthenticationService } from '../core/services/authentication.service';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 @NgModule({
-declarations:[AdminDashboardComponent,EditBlogComponent,AddBlogComponent,CreateTagComponent,BlogsComponent],
-imports:[CommonModule,AdminRoutingModule],
-providers:[TagsService, BlogService],
-schemas:[NO_ERRORS_SCHEMA]
-
-
+  imports: [
+    CommonModule,
+    NgbModule.forRoot(),
+    MDBBootstrapModule.forRoot(),       
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    FroalaEditorModule.forRoot(),FroalaViewModule.forRoot()
+  ],
+  declarations: [AdminDashboardComponent,CreateTagComponent,BlogsComponent,EditBlogComponent,AddBlogComponent],
+  providers: [AuthenticationService,Guard,TagsService,BlogService]
 })
-
-export class AdminModule{}
+export class AdminModule { }
