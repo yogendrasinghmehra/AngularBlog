@@ -10,6 +10,7 @@ import{BlogService} from '../../core/services/blog.service';
 export class BlogDetailComponent implements OnInit {
 public blog:any;
 public details:any;
+pageId:any;
 statusMessages:string;
 urlSlug:string
   constructor(private blogServices:BlogService,private router:Router,private route:ActivatedRoute,) {
@@ -18,11 +19,11 @@ urlSlug:string
       // console.log(params) //log the entire params object
        this.urlSlug=params['urlSlug'];
      });
-     this.getBlogDetails(this.urlSlug); 
+     
    }
 
   ngOnInit() {
- //   this.getBlogDetails(this.urlSlug);
+    this.getBlogDetails(this.urlSlug);  
   }
 
   // getting blog details by slug.
@@ -31,7 +32,7 @@ urlSlug:string
     return this.blogServices.getBlogBySlug(slug).subscribe(
       data=>{        
         this.blog=data; 
-        this.details=this.blog.blogDetails;                  
+        this.details=this.blog.blogDetails;                    
       }
     ),
     error=>{this.statusMessages=error;}

@@ -1,9 +1,7 @@
 <nav-menu></nav-menu>
-
-
 <div class="container">
   <div class="row py-4 mt-5">
-    <div class="col-9">      
+    <div class="col-lg-9 col-md-9 col-sm-12">      
 <section class=""> 
 <div *ngFor="let blog of list">
   <div class="row card card-cascade wider reverse pt-3 pb-3 pr-3 mb-3" >      
@@ -11,10 +9,9 @@
           <h4 class="mb-3 font-weight-bold">
               <strong>{{blog.title}}</strong>
           </h4>
-          <div class="" [innerHTML]="blog.content.substring(0,200)">
-              
-          </div>
-          <p>by <span class="font-weight-bold dark-grey-text">yogendra</span>, {{blog.createdDate | date:'MMMM dd, yyyy'}}</p>
+          <!-- <div class="" [innerHTML]="blog.content.substring(0,200)"> -->
+                <div>{{blog.shortHeading}}</div>
+          <p>by <span class="font-weight-bold dark-grey-text">yogendra</span>, {{blog.modifiedDate | date:'MMMM dd, yyyy'}}</p>
           <a   [routerLink]="['/blog',blog.urlslug]" class="btn btn-outline-black btn-rounded btn-md waves-effect waves-light" mdbWavesEffect>view full post </a>
       </div>  
      
@@ -40,7 +37,7 @@
 
 </section>          
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-md-3 col-sm-12">
         <tags-list></tags-list>
     </div>
   </div>

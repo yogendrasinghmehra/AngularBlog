@@ -1,10 +1,11 @@
 import { NgModule, Component } from '@angular/core';
-import{LoginComponent} from './shared/login/login.component';
+import{LoginComponent} from './Common/login/login.component';
 import{NavMenuComponent} from './shared/nav-menu/nav-menu.component';
-import{HomeComponent} from './shared/home/home.component';
+import{HomeComponent} from './Common/home/home.component';
 import {BlogsListComponent } from './Common/blogs-list/blogs-list.component';
 import {BlogDetailComponent} from './Common/blog-detail/blog-detail.component';
-import{TagsListComponent} from './Common/tags-list/tags-list.component'
+import{TagsListComponent} from './shared/tags-list/tags-list.component';
+import{ResumeComponent} from './Common/resume/resume.component';
 import{RouterModule,Routes} from '@angular/router';
 import{AppComponent} from './app.component';
 import{Guard} from './core/models/guard';
@@ -21,6 +22,11 @@ const appRoutes:Routes=[
 {
   path:"blogs",
   component:BlogsListComponent,
+  pathMatch:"full"
+},
+{
+  path:"resume",
+  component:ResumeComponent,
   pathMatch:"full"
 },
 {

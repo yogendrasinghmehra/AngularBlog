@@ -17,24 +17,26 @@ export class BlogsListComponent implements OnInit {
   public BlogList:any;
   public list:any;
   constructor(private blogServices:BlogService,private router:Router,private route:ActivatedRoute) {
+   
+   }
+
+  ngOnInit() {  
     this.route.params.subscribe(param=>{        
       if(param['tagName'])
       {
-        this.tag=param['tagName'];            
+        this.tag=param['tagName'];     
+        this.getBlogLists(1,this.tag); 
       }            
-    })
-   }
-
-  ngOnInit() {                
+    })              
       this.getBlogLists(1,this.tag); 
              
   }
+
 // getting blog list.
   getBlogLists(pageNo?:number,tag?:string)
-  {
+  {    
     return this.blogServices.getBlogsList(pageNo,tag).subscribe(
-      data=>{
-        
+      data=>{        
         this.BlogList=data;         
         this.list=this.BlogList.list; 
         this.prevoiusPage=this.BlogList.prePage;

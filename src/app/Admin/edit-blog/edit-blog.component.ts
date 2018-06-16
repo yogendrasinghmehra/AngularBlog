@@ -33,6 +33,7 @@ export class EditBlogComponent implements OnInit {
     this.EditBlogForm=this.FB.group({
       Id:['',Validators.required],
       Title:['',Validators.required],
+      ShortHeading:['',Validators.required],
       Content:['',Validators.required],
       urlslug:['',Validators.required],
       TagsId:['',Validators.required]
@@ -55,10 +56,12 @@ export class EditBlogComponent implements OnInit {
    //assign form
    assignForm(blog)
    {     
+     debugger;
     // console.log(blog);    
      this.EditBlogForm=this.FB.group({
       Id:[blog.blogDetails.id,Validators.required],
        Title:[blog.blogDetails.title, Validators.compose([ Validators.required,Validators.maxLength(100)])],
+       ShortHeading:[blog.blogDetails.shortHeading, Validators.compose([ Validators.required,Validators.maxLength(500)])],
        Content:[blog.blogDetails.content,Validators.required],
        urlslug:[blog.blogDetails.urlslug, Validators.compose([Validators.required,Validators.maxLength(100)]) ],
        TagsId:[blog.blogDetails.tagsId,Validators.required]

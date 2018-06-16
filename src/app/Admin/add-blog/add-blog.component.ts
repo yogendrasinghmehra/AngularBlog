@@ -34,6 +34,7 @@ export class AddBlogComponent implements OnInit {
     {
       this.blogForm=this.FB.group({
         Title:['', Validators.compose([ Validators.required,Validators.maxLength(100)])],
+        ShortHeading:['',Validators.compose([Validators.required,Validators.maxLength(500)])],
         Content:['',Validators.required],
         urlslug:['', Validators.compose([Validators.required,Validators.maxLength(100)]) ],
         TagsId:['',Validators.required],

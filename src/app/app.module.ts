@@ -10,22 +10,23 @@ import{MDBBootstrapModule} from 'angular-bootstrap-md';
 import{DisqusModule} from 'ngx-disqus';
 import{SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
-import { LoginComponent } from './shared/login/login.component';
-import { HomeComponent } from './shared/home/home.component';
+import { LoginComponent } from './Common/login/login.component';
+import { HomeComponent } from './Common/home/home.component';
 import{Guard} from './core/models/guard';
 import { AuthenticationService } from './core/services/authentication.service';
 import { BlogsListComponent } from './Common/blogs-list/blogs-list.component';
 import { BlogDetailComponent } from './Common/blog-detail/blog-detail.component';
-import { TagsListComponent } from './Common/tags-list/tags-list.component';
+import { TagsListComponent } from './shared/tags-list/tags-list.component';
 import { TagsService } from './core/services/tags.service';
 import { BlogService } from './core/services/blog.service';
 import { LoaderInterceptorService } from './core/interceptors/loader-interceptor.service';
+import { ResumeComponent } from './Common/resume/resume.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,LoginComponent,HomeComponent,BlogsListComponent,BlogDetailComponent,TagsListComponent
+    NavMenuComponent,LoginComponent,HomeComponent,BlogsListComponent,BlogDetailComponent,TagsListComponent, ResumeComponent
   ],
   imports: [   
     RoutingModule,  
