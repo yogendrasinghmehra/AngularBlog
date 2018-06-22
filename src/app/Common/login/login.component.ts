@@ -23,13 +23,15 @@ onSubmit()
   if(this.loginForm.valid)
   {   
     this.statusMessage="Checking ...";
-     this.authService.login(this.loginForm.value.id,this.loginForm.value.password)
-    .subscribe(result=>{     
-      if(result===true){this.router.navigate(['/admin'])}          
-    },error=>{
-      this.statusMessage="something went wrong";
-    }) 
-  
+    this.authService.login(this.loginForm.value.id,this.loginForm.value.password)
+    .subscribe(response=>{
+      if(response)
+      {
+       localStorage.setItem('currentUser',JSON.stringify({token:response.token,expireOn:response.expireOn}));
+       this.router.navigate(['/admin'])
+      }
+
+    },err=>{this.statusMessage="something went wrong";})  
   }
 }
   ngOnInit() {
