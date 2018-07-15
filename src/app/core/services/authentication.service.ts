@@ -9,7 +9,7 @@ export class AuthenticationService {
    //setting headers for request.
   private headers=new Headers({'Content-Type':'application/json'});
   
-  //login servvice...
+  //login service...
   login(id:string,password:string):Observable<AuthToken>{      
     //setting body for request.
     let body=JSON.stringify({UserName:id,Password:password});

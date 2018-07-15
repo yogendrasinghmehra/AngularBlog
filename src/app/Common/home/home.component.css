@@ -1,6 +1,6 @@
-#home-bg {
-    background: url("../../../assets/images/seamless-home-bg.jpg")no-repeat center center;
-    background-size: cover;
+.bg-img {
+    background: url("../../../assets/images/seamless-home-bg.png")repeat center center;   
     height: 60vh;
 }
-/*https://mdbootstrap.com/img/Photos/Others/img (50).jpg*/
+#home-bg{ background-color:#5b636a; }
+#divAboutMeLink a{ color:black; text-decoration:none; }

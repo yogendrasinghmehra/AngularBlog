@@ -53,7 +53,7 @@ export class BlogsComponent implements OnInit {
    // get tag list
    getTagsList()
    {     
-    return this.tagService.getTagList().subscribe(
+    return this.tagService.getTagList(null).subscribe(
       data=>{this.tagList=data});
        
    }

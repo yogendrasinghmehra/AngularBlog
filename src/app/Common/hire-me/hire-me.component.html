@@ -1,0 +1,55 @@
+<nav-menu></nav-menu>
+
+
+<div class="container">
+  <section class="section pb-3" style="margin-top:80px;">
+     
+    <div class="row">
+      <div class="col-md-2"></div>
+   <div class="col-md-8">
+<div class="card ">
+
+  <!-- Card body -->
+  <div class="card-body">
+
+    <!-- Material form register -->
+    <form [formGroup]="hireMe" (ngSubmit)="onSubmit()">
+      <h3 class="h3 text-center py-4">Hire Me</h3>
+
+      <div class="md-form">       
+        <input type="text" id="defaultForm-Name" class="form-control" formControlName="name" mdbActive > 
+        <label for="defaultForm-email">Name</label>     
+        <div class="text-danger"  *ngIf="hireMe.controls.name.invalid && hireMe.controls.name.dirty">Please Enter Your Name.</div>
+    </div>
+
+
+    <div class="md-form">
+     
+      <input type="email" id="defaultForm-Email" class="form-control" formControlName="email" mdbActive> 
+      <label for="defaultForm-email">Email</label>     
+      <div class=" text-danger"  *ngIf="hireMe.controls.email.invalid && hireMe.controls.email.dirty">Please Enter Valid Email.</div>
+  </div>
+
+  <div class="md-form">
+    
+    <textarea  id="defaultForm-Query" class="md-textarea" formControlName="queryDetails" mdbActive rows="5"></textarea>
+    <label for="defaultForm-email">How can i help?</label>     
+    <div  *ngIf="hireMe.controls.queryDetails.invalid && hireMe.controls.queryDetails.dirty"  class="text-danger">Please Enter Your Query.</div>
+</div>
+
+      <div class="text-center py-4 mt-3">
+        <button class="btn btn-outline-black btn-rounded btn-md waves-effect waves-light" type="submit" [disabled]="!hireMe.valid" mdbWavesEffect><i class="fa fa-edit"></i>Send Request</button>
+      </div>
+    </form>
+  
+  </div>
+  <!-- Card body -->
+
+</div>
+</div>
+<div class="col-md-2"></div>
+    
+    </div>
+    
+</section>
+</div>

@@ -5,6 +5,7 @@ import{HomeComponent} from '../Common/home/home.component';
 import {BlogsListComponent } from '../Common/blogs-list/blogs-list.component';
 import {BlogDetailComponent} from '../Common/blog-detail/blog-detail.component';
 import{ResumeComponent} from '../Common/resume/resume.component';
+import{ HireMeComponent } from '../Common/hire-me/hire-me.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,12 @@ const routes: Routes = [
     component:ResumeComponent,
     pathMatch:"full"
   },
+  {
+    path:"hire-me",
+    component:HireMeComponent,
+    pathMatch:"full"
+  },
+
   {
     path:"blog/:urlSlug",
     component:BlogDetailComponent,

@@ -15,15 +15,16 @@ import { CommonRoutingModule } from './common-routing.module';
 import { AuthenticationService } from '../core/services/authentication.service';
 import { TagsService } from '../core/services/tags.service';
 import { BlogService } from '../core/services/blog.service';
+import{CommonService} from '../core/services/common.service';
+import { HireMeComponent } from './hire-me/hire-me.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    CommonRoutingModule,ReactiveFormsModule,
-    NgbModule.forRoot(),MDBBootstrapModule.forRoot(),DisqusModule.forRoot('localhost-4200-11'),
+    CommonModule,CommonRoutingModule,ReactiveFormsModule,
+    NgbModule.forRoot(),MDBBootstrapModule.forRoot(),DisqusModule.forRoot('localhost-4200-11')    
   ],
   declarations: [LoginComponent,NavMenuComponent,HomeComponent,BlogsListComponent,BlogDetailComponent,
-    TagsListComponent,ResumeComponent],
-    providers:[TagsService,BlogService,AuthenticationService]
+    TagsListComponent,ResumeComponent, HireMeComponent],
+    providers:[TagsService,BlogService,AuthenticationService,CommonService]
 })
 export class CommonsModule { }

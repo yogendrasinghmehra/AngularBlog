@@ -5,7 +5,10 @@
 
 body{ background-color: #d9d9d9 !important}
 .card{border-radius: 0%;}
+.bg-gray{background-color: #d9d9d9;}
 #Main-Wrapper{ margin-top:5em;}
+.form-control:focus{background-color: #d9d9d9;}
+.form-control{ padding:0; padding-bottom:0.6rem; padding-top:0.5rem; }
 
 a{color:rgb(255, 255, 255);}
 a:hover{color:rgb(191, 191, 191);}
@@ -79,6 +82,11 @@ a:hover{color:rgb(191, 191, 191);}
     background-color: #fff;    
     border-color: #000;
 }
+
+input.ng-invalid.ng-touched.ng-dirty,textarea.ng-invalid.ng-touched.ng-dirty {
+    border-bottom-color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+  }
 
 
 

@@ -51,7 +51,7 @@ export class CreateTagComponent implements OnInit {
   //get tag list
   getTagsList()
   {
-      this.tagService.getTagList().subscribe(
+      this.tagService.getTagList("all").subscribe(
       data=>{this.tagList=data;}
     )
   }

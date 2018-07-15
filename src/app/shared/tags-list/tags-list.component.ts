@@ -18,7 +18,7 @@ export class TagsListComponent implements OnInit {
 
   GetTagsList()
   {
-return this.tagService.getTagList().subscribe(
+return this.tagService.getTagList(null).subscribe(
   data=>{    
     this.TagList=data;
   }

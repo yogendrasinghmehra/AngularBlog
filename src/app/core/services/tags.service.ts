@@ -20,12 +20,12 @@ export class TagsService {
     
    }
 // getting tag list...
-   getTagList()
+   getTagList(type)
    {     
      const httpOptions={
        headers:new HttpHeaders({'Content-Type':'application/json','Authorization':'Bearer '+this.token+''})
      }
-     return this._http.get('http://localhost:5000/api/Tags',httpOptions);
+     return this._http.get('http://localhost:5000/api/Tags?type='+type+'',httpOptions);
    }
 
    //remoing tag
